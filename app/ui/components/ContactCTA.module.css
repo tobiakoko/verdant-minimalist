@@ -1,0 +1,99 @@
+/* ContactCTA.module.css - Verdant Edition */
+
+.ctaContainer {
+  padding: var(--space-2xl, 4rem) var(--space-xl, 3rem);
+  margin-top: var(--space-3xl, 6rem);
+  text-align: center;
+  border-radius: var(--radius-2xl, 24px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative gradient background */
+.ctaContainer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(42, 104, 71, 0.1) 0%,
+    rgba(92, 184, 122, 0.05) 50%,
+    rgba(212, 165, 116, 0.1) 100%
+  );
+  z-index: -1;
+}
+
+:global(body:not(.dark-mode)) .ctaContainer,
+:global(.light-mode) .ctaContainer {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(21, 48, 33, 0.1);
+  box-shadow: 0 8px 32px rgba(10, 24, 16, 0.08);
+}
+
+:global(.dark-mode) .ctaContainer,
+:global(.dark) .ctaContainer {
+  background: var(--dark-bg-tertiary);
+  border: 1px solid rgba(var(--accent-primary-rgb, 139, 218, 163), 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.ctaContent {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaHeading {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-md, 1.5rem);
+}
+
+.ctaText {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-xl, 3rem);
+}
+
+:global(body:not(.dark-mode)) .ctaText,
+:global(.light-mode) .ctaText {
+  color: var(--light-text-muted, #7F878B);
+}
+
+:global(.dark-mode) .ctaText,
+:global(.dark) .ctaText {
+  color: var(--dark-text-muted, #5C6366);
+}
+
+/* CTA Button - Gradient with lift */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, var(--accent-primary, #2A6847), var(--accent-secondary, #3A8F62));
+  color: white;
+  border-radius: var(--radius-md, 12px);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px rgba(42, 104, 71, 0.3);
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(42, 104, 71, 0.4);
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+}

@@ -1,0 +1,146 @@
+/* PastMembersPage.module.css - Minimal Template */
+
+.pageWrapper {
+  padding-top: var(--header-height, 64px);
+  min-height: 100vh;
+}
+
+.pageContainer {
+  max-width: var(--max-width-content);
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+/* Page Header */
+.pageHeader {
+  text-align: center;
+  padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-3xl);
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.main {
+  padding-bottom: var(--spacing-4xl);
+}
+
+.membersList {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+/* Year Section */
+.yearSection {
+  width: 100%;
+}
+
+.yearHeader {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--accent-primary);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Members Grid */
+.membersCardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* Member Card - Simple */
+.memberCard {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  background: var(--color-background-card);
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-base);
+}
+
+.memberCard:hover {
+  border-color: var(--accent-primary);
+}
+
+.memberName {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-xs) 0;
+  transition: color var(--transition-base);
+}
+
+.memberCard:hover .memberName {
+  color: var(--accent-primary);
+}
+
+.memberRole {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--spacing-xs) 0;
+}
+
+.memberYears {
+  font-size: var(--font-size-xs);
+  color: var(--accent-primary);
+  margin: 0 0 var(--spacing-md) 0;
+}
+
+.memberDestination {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin: 0;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid var(--color-border);
+}
+
+.memberDestination strong {
+  color: var(--accent-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Back Link */
+.backLinkWrapper {
+  text-align: center;
+  margin-top: var(--spacing-3xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid var(--color-border);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  background: var(--color-background-card);
+  transition: all var(--transition-base);
+}
+
+.backLink:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}

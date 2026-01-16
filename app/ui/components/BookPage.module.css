@@ -1,0 +1,314 @@
+/* BookPage.module.css - Verdant Edition */
+
+.pageWrapper {
+  padding-top: var(--header-height, 80px);
+  min-height: 100vh;
+}
+
+.pageContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-3xl, 6rem) var(--space-xl, 3rem);
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-xl, 3rem);
+}
+
+@media (min-width: 968px) {
+  .contentGrid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Book Info Section - Glass card */
+.bookInfo {
+  padding: var(--space-2xl, 4rem);
+  border-radius: var(--radius-2xl, 24px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+:global(body:not(.dark-mode)) .bookInfo,
+:global(.light-mode) .bookInfo {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(21, 48, 33, 0.08);
+  box-shadow: 0 8px 32px rgba(10, 24, 16, 0.08);
+}
+
+:global(.dark-mode) .bookInfo,
+:global(.dark) .bookInfo {
+  background: var(--dark-bg-tertiary);
+  border: 1px solid rgba(var(--accent-primary-rgb, 139, 218, 163), 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .bookInfo {
+    padding: var(--space-xl, 3rem);
+  }
+}
+
+.bookHeader {
+  margin-bottom: var(--space-xl, 3rem);
+  text-align: center;
+  padding-bottom: var(--space-lg, 2rem);
+  border-bottom: 1px solid;
+}
+
+:global(body:not(.dark-mode)) .bookHeader,
+:global(.light-mode) .bookHeader {
+  border-bottom-color: rgba(21, 48, 33, 0.1);
+}
+
+:global(.dark-mode) .bookHeader,
+:global(.dark) .bookHeader {
+  border-bottom-color: rgba(139, 218, 163, 0.1);
+}
+
+.bookTitle {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 var(--space-md, 1.5rem) 0;
+}
+
+.bookAuthors {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--accent-tertiary, #5CB87A);
+}
+
+.bookCoverWrapper {
+  text-align: center;
+  margin-bottom: var(--space-xl, 3rem);
+}
+
+.bookCover {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-xl, 20px);
+  box-shadow: 0 20px 60px rgba(10, 24, 16, 0.2);
+}
+
+.bookDescription {
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: var(--space-xl, 3rem);
+}
+
+:global(body:not(.dark-mode)) .bookDescription,
+:global(.light-mode) .bookDescription {
+  color: var(--light-text-secondary, #153021);
+}
+
+:global(.dark-mode) .bookDescription,
+:global(.dark) .bookDescription {
+  color: var(--dark-text-secondary, #8BDAA3);
+}
+
+.bookDescription :global(p) {
+  margin: 0 0 var(--space-lg, 2rem) 0;
+}
+
+.bookDescription :global(p:first-of-type) {
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-bottom: var(--space-xl, 3rem);
+  padding-left: var(--space-md, 1.5rem);
+  position: relative;
+}
+
+.bookDescription :global(p:first-of-type)::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--accent-tertiary, #5CB87A), var(--accent-gold, #D4A574));
+  border-radius: 2px;
+}
+
+/* Metadata Grid */
+.bookMetadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-md, 1.5rem);
+  margin-top: var(--space-xl, 3rem);
+  padding: var(--space-lg, 2rem);
+  border-radius: var(--radius-lg, 16px);
+}
+
+:global(body:not(.dark-mode)) .bookMetadata,
+:global(.light-mode) .bookMetadata {
+  background: rgba(42, 104, 71, 0.06);
+  border: 1px solid rgba(21, 48, 33, 0.08);
+}
+
+:global(.dark-mode) .bookMetadata,
+:global(.dark) .bookMetadata {
+  background: rgba(92, 184, 122, 0.08);
+  border: 1px solid rgba(139, 218, 163, 0.1);
+}
+
+.metadataItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs, 0.5rem);
+}
+
+.metadataLabel {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-tertiary, #5CB87A);
+}
+
+.metadataValue {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+/* Purchase Section - Sticky glass card */
+.purchaseSection {
+  padding: var(--space-xl, 3rem);
+  border-radius: var(--radius-xl, 20px);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  height: fit-content;
+}
+
+:global(body:not(.dark-mode)) .purchaseSection,
+:global(.light-mode) .purchaseSection {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(21, 48, 33, 0.08);
+  box-shadow: 0 8px 32px rgba(10, 24, 16, 0.08);
+}
+
+:global(.dark-mode) .purchaseSection,
+:global(.dark) .purchaseSection {
+  background: var(--dark-bg-tertiary);
+  border: 1px solid rgba(var(--accent-primary-rgb, 139, 218, 163), 0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 968px) {
+  .purchaseSection {
+    position: sticky;
+    top: calc(var(--header-height, 80px) + var(--space-lg, 2rem));
+  }
+}
+
+.purchaseHeading {
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg, 2rem);
+  text-align: center;
+  padding-bottom: var(--space-sm, 1rem);
+  position: relative;
+}
+
+:global(body:not(.dark-mode)) .purchaseHeading,
+:global(.light-mode) .purchaseHeading {
+  color: var(--accent-secondary, #3A8F62);
+}
+
+:global(.dark-mode) .purchaseHeading,
+:global(.dark) .purchaseHeading {
+  color: var(--dark-text-secondary, #8BDAA3);
+}
+
+.purchaseHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-tertiary, #5CB87A), var(--accent-gold, #D4A574));
+  border-radius: 2px;
+}
+
+.retailersList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm, 1rem);
+  margin-bottom: var(--space-xl, 3rem);
+}
+
+/* Retailer links with translateX hover */
+.retailerLink {
+  display: block;
+  padding: var(--space-md, 1.5rem);
+  border-radius: var(--radius-md, 12px);
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+:global(body:not(.dark-mode)) .retailerLink,
+:global(.light-mode) .retailerLink {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(21, 48, 33, 0.1);
+  color: var(--light-text-primary, #0A1810);
+}
+
+:global(.dark-mode) .retailerLink,
+:global(.dark) .retailerLink {
+  background: var(--dark-bg-secondary);
+  border: 1px solid rgba(var(--accent-primary-rgb, 139, 218, 163), 0.15);
+  color: var(--dark-text-primary, #E8F9ED);
+}
+
+.retailerLink:hover {
+  transform: translateX(8px);
+  color: var(--accent-tertiary, #5CB87A);
+}
+
+:global(body:not(.dark-mode)) .retailerLink:hover,
+:global(.light-mode) .retailerLink:hover {
+  border-color: rgba(42, 104, 71, 0.3);
+  box-shadow: 0 4px 16px rgba(10, 24, 16, 0.1);
+}
+
+:global(.dark-mode) .retailerLink:hover,
+:global(.dark) .retailerLink:hover {
+  border-color: rgba(139, 218, 163, 0.3);
+  box-shadow: 0 4px 16px rgba(10, 24, 16, 0.2);
+}
+
+/* Additional Info */
+.additionalInfo {
+  padding: var(--space-md, 1.5rem);
+  border-radius: var(--radius-md, 12px);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+:global(body:not(.dark-mode)) .additionalInfo,
+:global(.light-mode) .additionalInfo {
+  background: rgba(42, 104, 71, 0.06);
+  color: var(--light-text-muted, #7F878B);
+}
+
+:global(.dark-mode) .additionalInfo,
+:global(.dark) .additionalInfo {
+  background: rgba(92, 184, 122, 0.08);
+  color: var(--dark-text-muted, #5C6366);
+}
+
+.additionalInfo strong {
+  color: var(--accent-tertiary, #5CB87A);
+  font-weight: 600;
+}

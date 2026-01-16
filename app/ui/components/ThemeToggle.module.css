@@ -1,0 +1,114 @@
+/* ThemeToggle.module.css - Intuitive sliding toggle */
+
+.toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-full, 9999px);
+  transition: transform var(--transition-base, 0.3s ease);
+}
+
+.toggle:hover {
+  transform: scale(1.05);
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--accent-tertiary);
+  outline-offset: 2px;
+}
+
+.togglePlaceholder {
+  width: 60px;
+  height: 32px;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60px;
+  height: 32px;
+  padding: 0 6px;
+  border-radius: var(--radius-full, 9999px);
+  transition: all var(--transition-base, 0.3s ease);
+}
+
+/* Light mode track */
+:global(body:not(.dark-mode)) .track,
+:global(.light-mode) .track {
+  background: rgba(42, 104, 71, 0.12);
+  border: 1px solid rgba(21, 48, 33, 0.15);
+}
+
+/* Dark mode track */
+:global(.dark-mode) .track,
+:global(.dark) .track {
+  background: rgba(139, 218, 163, 0.15);
+  border: 1px solid rgba(139, 218, 163, 0.2);
+}
+
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+/* Light mode thumb */
+:global(body:not(.dark-mode)) .thumb,
+:global(.light-mode) .thumb {
+  background: linear-gradient(135deg, var(--accent-primary, #2A6847), var(--accent-secondary, #3A8F62));
+}
+
+/* Dark mode thumb */
+:global(.dark-mode) .thumb,
+:global(.dark) .thumb {
+  background: linear-gradient(135deg, var(--accent-secondary, #3A8F62), var(--accent-tertiary, #5CB87A));
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  z-index: 1;
+  transition: all var(--transition-base, 0.3s ease);
+  opacity: 0.4;
+}
+
+.iconActive {
+  opacity: 1;
+}
+
+/* Light mode icons */
+:global(body:not(.dark-mode)) .sunIcon,
+:global(.light-mode) .sunIcon {
+  color: var(--accent-primary, #2A6847);
+}
+
+:global(body:not(.dark-mode)) .moonIcon,
+:global(.light-mode) .moonIcon {
+  color: var(--light-text-muted, #7F878B);
+}
+
+/* Dark mode icons */
+:global(.dark-mode) .sunIcon,
+:global(.dark) .sunIcon {
+  color: var(--dark-text-muted, #5C6366);
+}
+
+:global(.dark-mode) .moonIcon,
+:global(.dark) .moonIcon {
+  color: var(--accent-tertiary, #5CB87A);
+}
